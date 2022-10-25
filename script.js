@@ -229,7 +229,12 @@ var numbers = ["1", "2", "3", "4"]
  }
 //2 davaleba
 
- function display(x) {
+function Input () {
+    var income = prompt("tanxa")
+}
+
+ function display() {
+    Input();
     if (income < 2000) {
         alert("დაბალი ხელფასი")
     }
@@ -240,7 +245,7 @@ var numbers = ["1", "2", "3", "4"]
         alert("კაი ხელფასი")
     }
  }
- display(750)
+ display()
 
  
 
