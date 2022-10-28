@@ -222,38 +222,189 @@
 // //hoisting ცვლადზე მიმართვის პროცესი მის განსაზღვრამდე
 
 
-//1 davaleba
-var numbers = ["1", "2", "3", "4"]
- for(var i = 0; i < numbers.length; i ++){
-    console.log(numbers[i])
- }
-//2 davaleba
+// //1 davaleba
+// var numbers = ["1", "2", "3", "4"]
+//  for(var i = 0; i < numbers.length; i ++){
+//     console.log(numbers[i])
+//  }
+// //2 davaleba
 
-function Input () {
-    var income = prompt("tanxa")
-}
+// function Input () {
+//     var income = prompt("tanxa")
+// }
 
- function display() {
-    Input();
-    if (income < 2000) {
-        alert("დაბალი ხელფასი")
-    }
-    else if (income >=2000 && income <=4000) {
-        alert("საშუალო ხელფასი")
-    }
-    else {
-        alert("კაი ხელფასი")
-    }
- }
- display()
+//  function display() {
+//     Input();
+//     if (income < 2000) {
+//         alert("დაბალი ხელფასი")
+//     }
+//     else if (income >=2000 && income <=4000) {
+//         alert("საშუალო ხელფასი")
+//     }
+//     else {
+//         alert("კაი ხელფასი")
+//     }
+//  }
+//  display()
 
  
 
- //3 davaleba
- const arr = [15,53,22,198,10,28,16,70,33,951];
+//  //3 davaleba
+//  const arr = [15,53,22,198,10,28,16,70,33,951];
 
- const odds = arr.filter(number => {
-    return number % 2  !==0;
- });
+//  const odds = arr.filter(number => {
+//     return number % 2  !==0;
+//  });
 
- console.log(odds); //15,53,33,951
+//  console.log(odds); //15,53,33,951
+
+
+
+// //OOP
+// var user = new object()
+
+// //1
+// var user = {}
+// user.name = "Tom"
+// user.age = 25;
+// console.log(user.name)
+// console.log(user.age)
+
+// //ფუნქციით გამოძახება მეორენაირად
+// //1
+// //თუ ბაზიდან მოცემული ინფორმაცია არის პირდაპირ ობიექტი
+// var user = {}
+// user.name = "Tom"
+// user.age = 25;
+//    user.display = function() {
+//     console.log(user.name);
+//     console.log(user.age)
+//    }
+
+// user.display();
+
+// //იგივე მასივებით 
+// //1
+// //თუ ბაზიდან მოცემული ინფორმაცია არის მასივი
+// var user = {}
+// user["name"] = "Tom"
+// user["age"] = 25;
+//    user["display"] = function() {
+//     console.log(user.name)
+//     console.log(user.age)
+//    }
+//    user["display"]()
+
+// //მესამე ვარიანტი
+// //1
+// var user = {
+//     name : "Tom",
+//     age : 25,
+//     display : function() {
+//         console.log(this.name)
+//         console.log(this.age)
+//     }
+// }
+// user.display();
+// //
+
+// var user = {
+//     name : "Tom",
+//     age : 25,
+//     display : function() {
+//         console.log(this.name)
+//         console.log(this.age)
+//     }
+// }
+// console.log(user.name) //Tom
+// delete user.name; //წაშალა
+// console.log(user.name) // undefined
+
+// //ობიექტში მასივები
+// var country = {
+//     name : "Georgia",
+//     language : "Georgian",
+//     capital : {
+//         name : "Tbilisi",
+//         population : 1500000,
+//         year : 1784
+//     }
+// }
+// console.log(country.capital.name) //Tbilisi , ამას ქვია წერტილის ნოტაცია
+// console.log(country["capital"]["population"]) // 150000 , მასივებით ინფორმაციის ამოღება, მივმართავთ სინტაქსით
+
+
+// var country = {
+//     name : "შვეიცარია",
+//     languages : ["გერმანული", "ფრანგული", "იტალიური"],
+//     capital : {
+//         name : "ბერნი",
+//         population : 150000
+//     },
+//     cities : [
+//         {name: "ციურიხი", population: 5444444543},
+//         {name: "ჟენევა", population: 443331123 },
+//         {name: "ბაზელი", population: 4343113412 }
+//     ]
+// }
+// //country languaes ყველა ელემენტი
+// document.write("<h3>შვეიცარიის ოფიციალური ენებია</h3>")
+// for (var i = 0; i < country.languages.length; i++)
+//     document.write(country.languages[i]) + "</br>"
+
+// //შვეიცარიის ქალაქები
+// document.write("<h3>შვეიცარიის ქალაქები</h3>")
+// for (var i = 0; i < country.cities.length; i++)
+//     document.write(country.cities[i].name + "</br>")
+
+
+// //არის თუ არა ესა თუ ის მონაცემი ობიექტში
+// var user ={}
+// user.name ="Tom",
+// user.age = 26,
+// user.display = function () {
+//     console.log(user.name);
+//     console.log(user.age);
+// }
+
+// var hasNamesProp = "name" in user;
+// console.log(hasNamesProp) //true  ამოწმებს არის თუ არა name ობიექტში
+
+// var hasWeightProp = "weight" in user;
+// console.log(hasWeightProp) //false , რადგან weight არ არის ობიექტში
+
+
+// //ფუნქციაში ობიექტი
+// function createUser (pName, pAge) {
+//     return{
+//         name : pName,
+//         age : pAge,
+//         displayInfo : function () {
+//             document.write("name" + " " + this.name + " " + "age" + " " + this.age + "</br>");
+//         }
+//     }
+// }
+// var Tom = createUser("Tom", 26);
+// Tom.displayinfo();
+// var Alice = createUser ("Alice", 25)
+// Alice.displayinfo();
+
+
+
+//დავალება
+var movie = {
+    name : "The Dark Knight",
+    Director : "Christoper Nolan",
+    Writers : ["Jonathan Nolan", "Christoper Nolan", "David Goyer"],
+    Stars : ["Christian Bale,", "Heath Ledger", "Aaron Eckhart"],
+    IMDB : "9.0",
+    Budget : "185 000 000",
+    Gross : "1 006 234 167"
+}
+console.log(movie.name) // წერტილის ნოტაციის გამოვიტანე
+console.log(movie[writers]) //მასივით ინფორმაციის ამოღება
+document.write("<h3>ფილმის ტოპ მსახიობები</h3>")
+for (var i = 0; i < movie.Stars.length; i++)
+    document.write(movie.stars[i] + "</br>")
+
+
