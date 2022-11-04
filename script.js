@@ -349,14 +349,17 @@
 // }
 // //country languaes ყველა ელემენტი
 // document.write("<h3>შვეიცარიის ოფიციალური ენებია</h3>")
-// for (var i = 0; i < country.languages.length; i++)
-//     document.write(country.languages[i]) + "</br>"
+// for (var i = 0; i < country.languages.length; i++){
+//     document.write(country.languages[i] + "</br>") 
+// }
+    
 
 // //შვეიცარიის ქალაქები
 // document.write("<h3>შვეიცარიის ქალაქები</h3>")
-// for (var i = 0; i < country.cities.length; i++)
+// for (var i = 0; i < country.cities.length; i++){
 //     document.write(country.cities[i].name + "</br>")
-
+// }
+    
 
 // //არის თუ არა ესა თუ ის მონაცემი ობიექტში
 // var user ={}
@@ -391,20 +394,198 @@
 
 
 
-//დავალება
-var movie = {
-    name : "The Dark Knight",
-    Director : "Christoper Nolan",
-    Writers : ["Jonathan Nolan", "Christoper Nolan", "David Goyer"],
-    Stars : ["Christian Bale,", "Heath Ledger", "Aaron Eckhart"],
-    IMDB : "9.0",
-    Budget : "185 000 000",
-    Gross : "1 006 234 167"
+// //დავალება წინა
+// var movie = {
+//     name : "The Dark Knight",
+//     Director : "Christoper Nolan",
+//     Writers : ["Jonathan Nolan", "Christoper Nolan", "David Goyer"],
+//     Stars : ["Christian Bale,", "Heath Ledger", "Aaron Eckhart"],
+//     IMDB : "9.0",
+//     Budget : "185 000 000",
+//     Gross : "1 006 234 167"
+// }
+// console.log(movie.name) // წერტილის ნოტაციის გამოვიტანე
+// console.log(movie["writers"]) //მასივით ინფორმაციის ამოღება
+// document.write("<h3>ფილმის ტოპ მსახიობები</h3>")
+// for (var i = 0; i < movie.Stars.length; i++) {
+//     document.write(movie.stars[i] + "</br>")
+// }
+    
+
+
+
+
+
+
+
+
+
+
+// //ფუნქციაში ობიექტი
+// function createUser (pName, pAge) {
+//     return{
+//         name : pName,
+//         age : pAge,
+//         displayInfo : function () {
+//             document.write("name" + " " + this.name + " " + "age" + " " + this.age + "</br>");
+//         }
+//     }
+// }
+// var Tom = createUser("Tom", 26);
+// Tom.displayinfo();
+// var Alice = createUser ("Alice", 25)
+// Alice.displayinfo();
+
+// ობიექტის კონსტრუქტორები
+// ერთიდაიგივე ეს და ზემოთა უბრალოდ მეორეში რეთურნის მაგივრად this აღვწერეთ იფნრომაცია
+//1 დავალება ამის მსგავსად
+var tom = new object();
+
+function User (pName, pAge) {
+    this.name = pName; //თვისება
+    this.age = pAge;  // თვისება
+    this.displayInfo = function() { //მეთოდი
+        document.write("saxeli" + this.name + "asaki" + this.age)
+    }
 }
-console.log(movie.name) // წერტილის ნოტაციის გამოვიტანე
-console.log(movie[writers]) //მასივით ინფორმაციის ამოღება
-document.write("<h3>ფილმის ტოპ მსახიობები</h3>")
-for (var i = 0; i < movie.Stars.length; i++)
-    document.write(movie.stars[i] + "</br>")
+var tom = new User("Tom" , 26)
+
+document.write(tom.name)
 
 
+
+
+
+//ertadaa
+// car type constructor
+//2 დავალება
+function car(mName, mAge) {
+    this.name = mName;
+    this.age = mYear;
+    this.getCarInfo = function() { //ეს ფუნქცია შაბოლონივითაა, რომც მოვაშოროთ არაფერი არ შეიცვლება
+        document.write("model" + this.name + "gamoshvebis weli" + this.age)
+    }
+}
+//User type
+function User (pName, pAge) {
+    this.name = pName; //თვისება
+    this.age = pAge;
+    this.drivecar = function(car) {
+        document.write(this.name + "atarebs" + car.name + car.Year)
+    };
+    this.displayInfo = function(car) {
+        document.write("saxeli" + this.name + "asaki" + this.age)
+    }
+}
+var tom = new User("Tom" , 26);
+tom.displayinfo();
+
+var lada = new Car ("lada" , 1800);
+tom.drivecar(lada)
+
+
+
+
+//prototype
+function User (pName, pAge) {
+    this.name = pName; //ესენი რომლებიც იცვლება
+    this.age = pAge; // არა გლობალური
+    this.displayInfo = function() {
+        document.write("saxeli" + this.name + "asaki" + this.age)
+    }
+}
+//hello არის მეთოდი
+User.prototype.hello = function(){
+    document.write(this.name + "says hello world") //გლობალური
+}
+//maxAge არის თვისება
+User.prototype.maxAge = 110; //გლობალური
+
+var tom = new User("tom" , 26);
+tom.hello()
+document.write(tom.maxAge)
+var giorgi = new User("Giorgi", 24)
+giorgi.hello()
+
+document.write(tom.maxAge)
+
+
+
+//ინკაფსულაცია
+function User (pName, pAge) {
+    this.name = pName; 
+    this.age = pAge; 
+    this.displayInfo = function() {
+        document.write("saxeli" + this.name + "asaki" + this.age)
+    }
+}
+var tom = new User("Tom" , 26)
+tom.name = 34; //საბოლოო ჯამში ამას წაიკითხავს
+document.write(tom.name) //34
+
+
+
+
+
+function User (name ,age) {
+    this.name = name;
+    var _age = age; //getter
+    this.displayInfo = function () {
+        document.write("saxeli" + this.name + "asaki" + _age)
+    }
+}
+this.getAge = function () {
+    return _age;
+}   //setter
+this.setAge = function (age) {
+    if (typeof age === "number" && age > 0 && age < 110) {
+        return _age = age;
+    }
+    else {
+        alert("invalid parametrs")
+    }
+}
+var tom = new User("Tom" , 26);
+document.write(tom.age) //undefined
+
+document.write(tom.getAge()) //26
+
+tom.setAge(32); 
+
+document.write(tom.getAge()); //32
+
+tom.setAge("53") //invalid parametrs
+
+
+
+
+
+//მემკვიდრეობა
+//მომხარებლის კონსტრუქტორი
+function User(name , age) {
+    this.name = name;
+    this.age = age;
+    this.go = function () {
+        document.write(this.name + "goes")
+    };
+    this.displayInfo = function () {
+        document.write("saxeli" + this.name + "asaki" + this.age);
+    }
+}
+User.prototype.maxage = 110;
+
+function Employee(name,age,company) {
+    User.call(this,name,age);
+    this.company = company;
+    this.displayInfo = function () {
+        document.write("saxeli" + this.name + "asaki" + this.age + "company" + this.company)
+    }
+}
+Employee.prototype = object.create(User.prototype);
+
+var tom = new User("Tom" , 26)
+var bill = new Employee("bill" , 25 , "Google")
+
+
+tom.displayInfo()
+bill.displayInfo()
