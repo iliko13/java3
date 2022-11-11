@@ -589,3 +589,22 @@ var bill = new Employee("bill" , 25 , "Google")
 
 tom.displayInfo()
 bill.displayInfo()
+
+//arguments : პარამეტრების მასივი
+//length : განსაზღვრავს ფუნქციას რასაც ელოდება ფუნქცია
+//caller : განსაზღვრავს ფუნქციას რომელმაც წამოიწყო ფუნქციის შესრულება
+//name : ფუნქციის სახელი
+//prototype : ფუნქციის პროტოტიპი
+
+function add (x ,y) {
+    return x + y;
+}
+var result = add.call(this,3,8)
+document.write(result) //11
+
+
+function add (x ,y) {
+    return x + y;
+}
+var result = add.apply(null, [3,8])
+document.write(result) //11t
