@@ -439,172 +439,276 @@
 // ობიექტის კონსტრუქტორები
 // ერთიდაიგივე ეს და ზემოთა უბრალოდ მეორეში რეთურნის მაგივრად this აღვწერეთ იფნრომაცია
 //1 დავალება ამის მსგავსად
-var tom = new object();
+// var tom = new object();
 
-function User (pName, pAge) {
-    this.name = pName; //თვისება
-    this.age = pAge;  // თვისება
-    this.displayInfo = function() { //მეთოდი
-        document.write("saxeli" + this.name + "asaki" + this.age)
-    }
+// function User (pName, pAge) {
+//     this.name = pName; //თვისება
+//     this.age = pAge;  // თვისება
+//     this.displayInfo = function() { //მეთოდი
+//         document.write("saxeli" + this.name + "asaki" + this.age)
+//     }
+// }
+// var tom = new User("Tom" , 26)
+
+// document.write(tom.name)
+
+
+
+
+
+// //ertadaa
+// // car type constructor
+// //2 დავალება
+// function car(mName, mAge) {
+//     this.name = mName;
+//     this.age = mYear;
+//     this.getCarInfo = function() { //ეს ფუნქცია შაბოლონივითაა, რომც მოვაშოროთ არაფერი არ შეიცვლება
+//         document.write("model" + this.name + "gamoshvebis weli" + this.age)
+//     }
+// }
+// //User type
+// function User (pName, pAge) {
+//     this.name = pName; //თვისება
+//     this.age = pAge;
+//     this.drivecar = function(car) {
+//         document.write(this.name + "atarebs" + car.name + car.Year)
+//     };
+//     this.displayInfo = function(car) {
+//         document.write("saxeli" + this.name + "asaki" + this.age)
+//     }
+// }
+// var tom = new User("Tom" , 26);
+// tom.displayinfo();
+
+// var lada = new Car ("lada" , 1800);
+// tom.drivecar(lada)
+
+
+
+
+// //prototype
+// function User (pName, pAge) {
+//     this.name = pName; //ესენი რომლებიც იცვლება
+//     this.age = pAge; // არა გლობალური
+//     this.displayInfo = function() {
+//         document.write("saxeli" + this.name + "asaki" + this.age)
+//     }
+// }
+// //hello არის მეთოდი
+// User.prototype.hello = function(){
+//     document.write(this.name + "says hello world") //გლობალური
+// }
+// //maxAge არის თვისება
+// User.prototype.maxAge = 110; //გლობალური
+
+// var tom = new User("tom" , 26);
+// tom.hello()
+// document.write(tom.maxAge)
+// var giorgi = new User("Giorgi", 24)
+// giorgi.hello()
+
+// document.write(tom.maxAge)
+
+
+
+// //ინკაფსულაცია
+// function User (pName, pAge) {
+//     this.name = pName; 
+//     this.age = pAge; 
+//     this.displayInfo = function() {
+//         document.write("saxeli" + this.name + "asaki" + this.age)
+//     }
+// }
+// var tom = new User("Tom" , 26)
+// tom.name = 34; //საბოლოო ჯამში ამას წაიკითხავს
+// document.write(tom.name) //34
+
+
+
+
+
+// function User (name ,age) {
+//     this.name = name;
+//     var _age = age; //getter
+//     this.displayInfo = function () {
+//         document.write("saxeli" + this.name + "asaki" + _age)
+//     }
+// }
+// this.getAge = function () {
+//     return _age;
+// }   //setter
+// this.setAge = function (age) {
+//     if (typeof age === "number" && age > 0 && age < 110) {
+//         return _age = age;
+//     }
+//     else {
+//         alert("invalid parametrs")
+//     }
+// }
+// var tom = new User("Tom" , 26);
+// document.write(tom.age) //undefined
+
+// document.write(tom.getAge()) //26
+
+// tom.setAge(32); 
+
+// document.write(tom.getAge()); //32
+
+// tom.setAge("53") //invalid parametrs
+
+
+
+
+
+// //მემკვიდრეობა
+// //მომხარებლის კონსტრუქტორი
+// function User(name , age) {
+//     this.name = name;
+//     this.age = age;
+//     this.go = function () {
+//         document.write(this.name + "goes")
+//     };
+//     this.displayInfo = function () {
+//         document.write("saxeli" + this.name + "asaki" + this.age);
+//     }
+// }
+// User.prototype.maxage = 110;
+
+// function Employee(name,age,company) {
+//     User.call(this,name,age);
+//     this.company = company;
+//     this.displayInfo = function () {
+//         document.write("saxeli" + this.name + "asaki" + this.age + "company" + this.company)
+//     }
+// }
+// Employee.prototype = object.create(User.prototype);
+
+// var tom = new User("Tom" , 26)
+// var bill = new Employee("bill" , 25 , "Google")
+
+
+// tom.displayInfo()
+// bill.displayInfo()
+
+// //arguments : პარამეტრების მასივი
+// //length : განსაზღვრავს ფუნქციას რასაც ელოდება ფუნქცია
+// //caller : განსაზღვრავს ფუნქციას რომელმაც წამოიწყო ფუნქციის შესრულება
+// //name : ფუნქციის სახელი
+// //prototype : ფუნქციის პროტოტიპი
+
+// function add (x ,y) {
+//     return x + y;
+// }
+// var result = add.call(this,3,8)
+// document.write(result) //11
+
+
+// function add (x ,y) {
+//     return x + y;
+// }
+// var result = add.apply(null, [3,8])
+// document.write(result) //11t
+
+
+
+//axali gakvetili
+
+// // ობიექტი Date და მისი მეთოდები
+// const currentDate = new Date();
+// document.write(currentDate)//ყველაზე კომფორტულია
+
+
+// const myDate = new Date(0)
+// document.write(myDate) //გვიჩვენებს 1970 წლიდან რამდენი წლითაა მოცემული თარიღი
+
+// var myDate = new Date("8 november 2022")
+// document.write(myDate)
+
+
+// getDate() //აბრუნებს თვის რიცხვს
+// getDay() //აბრუნებს კვირის დღეს(ათვლა 0 დან, 0-კვირა,6-შაბათი)
+// getMonth() // აბრუნებს თვის ნომერს (ათვლა იწყება 0 დან)
+// toDateString() //აბრუნებს სრულ თარიღს სტრინგის სახით
+// toTimeString() //აბრუნებს სრულ დროს
+// getHours() // აბრუნებს საათს (0 დან 23 ჩათვლით)
+// getMinutes() //აბრუნებს წუთებს (0 დან 59 ჩათვლით)
+// getSeconds() // აბრუნებს წამებს (0 დან 59)
+// getMilliseconds() // აბრუნებს მილიწამებს ( 0-999)
+
+// const d = new Date();
+// const day = d.getDate();
+// document.write(day) // 8 
+
+// //გართულებული ვერსია
+// const days = ["კვირა","ორშაბათი","სამშაბათი","ოთხშაბათი","ხუთშაბათი","პარასკევი","შაბათი"];
+// const months = ["იანვარი","თებერვალი","მარტი","აპრილი","მაისი","ივნისი","ივლისი","აგვისტო","სექტემბერი","ოქტომბერი","ნოემბერი","დეკმებერი"];
+
+// const myDate = new Date()
+// const fullDate = "დღეს" + myDate.getFullYear() + "წლის" + myDate.getDate 
+// + " " + months[myDate.getMonth()] + " , " + days[myDate.getDay()];
+// document.write(fullDate)
+
+
+// let welcome;
+// const myHour = new Date();
+// const hour = myHour.getHours();
+// const minutes = myHour.getMinutes()
+// const seconds = myHour.getSeconds()
+
+// if (minutes < 10) {
+//     minutes = "0" + minutes;
+// }
+// if (seconds < 10) {
+//     seconds = "0" + seconds;
+// }
+// if (hour < 12) {
+//     welcome = "დილა მშვიდობის"
+// }
+// else if (hour < 17) {
+//     welcome = "დღე მშვიდობის"
+// }
+// else {
+//     welcome = "საღამო მშვიდობის"
+// }
+// document.write(welcome + "მიმდინარე დროა" + hour + ":" + minutes + ":" + seconds)
+
+
+const x = -25
+document.write(Math.abs(x)) //25
+
+const y = 37
+document.write(Math.abs(y)) // 37  , ყოველთვის გვინდა აბოლუტის დაბრუნება
+
+const max = Math.max(19,45) //45
+const min = Math.min(33,24,28) //24
+
+const celi = Math.ceil(19.4) //20  19.6 ზეც 20 ს გამოიტანს
+const negativeceli = Math.ceil(-5.9) //-5
+
+const floor = Math.floor(9.2) //9 , 9,6 ზეც 9 გამოიტანს
+console.log(floor)
+
+const z = Math.round(5.4) //5 , მაგრამ რომ ეწეროს 5.5 დააბრუნებს 6-ს
+console.log(z)
+
+const rnd = Math.random() //დააბრუნოს ნებისმიერი რიცხვი 1 მდე
+console.log(rnd)
+
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
 }
-var tom = new User("Tom" , 26)
+console.log(getRandomInt(100)); //ამ დროს ნებმისერ რიცხვს მოგცემს 100 მდე და თან დამრგვალებულს
 
-document.write(tom.name)
+const names = [
+    "apxo",
+    "giorgi",
+    "ana",
+    "tiko",
+    "tornike"
+]
+const mynames = names[Math.floor(Math.random() * names.lenth)] //რანდომულად ამოყრის სახელებს
+document.write(mynames)
 
+const kvadrati = Math.pow(2,3) //8 , ახარისხებს 2 იმდენჯერ რამდენიც წერია მის გვერდით
 
-
-
-
-//ertadaa
-// car type constructor
-//2 დავალება
-function car(mName, mAge) {
-    this.name = mName;
-    this.age = mYear;
-    this.getCarInfo = function() { //ეს ფუნქცია შაბოლონივითაა, რომც მოვაშოროთ არაფერი არ შეიცვლება
-        document.write("model" + this.name + "gamoshvebis weli" + this.age)
-    }
-}
-//User type
-function User (pName, pAge) {
-    this.name = pName; //თვისება
-    this.age = pAge;
-    this.drivecar = function(car) {
-        document.write(this.name + "atarebs" + car.name + car.Year)
-    };
-    this.displayInfo = function(car) {
-        document.write("saxeli" + this.name + "asaki" + this.age)
-    }
-}
-var tom = new User("Tom" , 26);
-tom.displayinfo();
-
-var lada = new Car ("lada" , 1800);
-tom.drivecar(lada)
-
-
-
-
-//prototype
-function User (pName, pAge) {
-    this.name = pName; //ესენი რომლებიც იცვლება
-    this.age = pAge; // არა გლობალური
-    this.displayInfo = function() {
-        document.write("saxeli" + this.name + "asaki" + this.age)
-    }
-}
-//hello არის მეთოდი
-User.prototype.hello = function(){
-    document.write(this.name + "says hello world") //გლობალური
-}
-//maxAge არის თვისება
-User.prototype.maxAge = 110; //გლობალური
-
-var tom = new User("tom" , 26);
-tom.hello()
-document.write(tom.maxAge)
-var giorgi = new User("Giorgi", 24)
-giorgi.hello()
-
-document.write(tom.maxAge)
-
-
-
-//ინკაფსულაცია
-function User (pName, pAge) {
-    this.name = pName; 
-    this.age = pAge; 
-    this.displayInfo = function() {
-        document.write("saxeli" + this.name + "asaki" + this.age)
-    }
-}
-var tom = new User("Tom" , 26)
-tom.name = 34; //საბოლოო ჯამში ამას წაიკითხავს
-document.write(tom.name) //34
-
-
-
-
-
-function User (name ,age) {
-    this.name = name;
-    var _age = age; //getter
-    this.displayInfo = function () {
-        document.write("saxeli" + this.name + "asaki" + _age)
-    }
-}
-this.getAge = function () {
-    return _age;
-}   //setter
-this.setAge = function (age) {
-    if (typeof age === "number" && age > 0 && age < 110) {
-        return _age = age;
-    }
-    else {
-        alert("invalid parametrs")
-    }
-}
-var tom = new User("Tom" , 26);
-document.write(tom.age) //undefined
-
-document.write(tom.getAge()) //26
-
-tom.setAge(32); 
-
-document.write(tom.getAge()); //32
-
-tom.setAge("53") //invalid parametrs
-
-
-
-
-
-//მემკვიდრეობა
-//მომხარებლის კონსტრუქტორი
-function User(name , age) {
-    this.name = name;
-    this.age = age;
-    this.go = function () {
-        document.write(this.name + "goes")
-    };
-    this.displayInfo = function () {
-        document.write("saxeli" + this.name + "asaki" + this.age);
-    }
-}
-User.prototype.maxage = 110;
-
-function Employee(name,age,company) {
-    User.call(this,name,age);
-    this.company = company;
-    this.displayInfo = function () {
-        document.write("saxeli" + this.name + "asaki" + this.age + "company" + this.company)
-    }
-}
-Employee.prototype = object.create(User.prototype);
-
-var tom = new User("Tom" , 26)
-var bill = new Employee("bill" , 25 , "Google")
-
-
-tom.displayInfo()
-bill.displayInfo()
-
-//arguments : პარამეტრების მასივი
-//length : განსაზღვრავს ფუნქციას რასაც ელოდება ფუნქცია
-//caller : განსაზღვრავს ფუნქციას რომელმაც წამოიწყო ფუნქციის შესრულება
-//name : ფუნქციის სახელი
-//prototype : ფუნქციის პროტოტიპი
-
-function add (x ,y) {
-    return x + y;
-}
-var result = add.call(this,3,8)
-document.write(result) //11
-
-
-function add (x ,y) {
-    return x + y;
-}
-var result = add.apply(null, [3,8])
-document.write(result) //11t
+const square = Math.sqrt(9) //3 , კვადრატული ფესვი
