@@ -673,42 +673,43 @@
 // document.write(welcome + "მიმდინარე დროა" + hour + ":" + minutes + ":" + seconds)
 
 
-const x = -25
-document.write(Math.abs(x)) //25
+// const x = -25
+// document.write(Math.abs(x)) //25
 
-const y = 37
-document.write(Math.abs(y)) // 37  , ყოველთვის გვინდა აბოლუტის დაბრუნება
+// const y = 37
+// document.write(Math.abs(y)) // 37  , ყოველთვის გვინდა აბოლუტის დაბრუნება
 
-const max = Math.max(19,45) //45
-const min = Math.min(33,24,28) //24
+// const max = Math.max(19,45) //45
+// const min = Math.min(33,24,28) //24
 
-const celi = Math.ceil(19.4) //20  19.6 ზეც 20 ს გამოიტანს
-const negativeceli = Math.ceil(-5.9) //-5
+// const celi = Math.ceil(19.4) //20  19.6 ზეც 20 ს გამოიტანს
+// const negativeceli = Math.ceil(-5.9) //-5
 
-const floor = Math.floor(9.2) //9 , 9,6 ზეც 9 გამოიტანს
-console.log(floor)
+// const floor = Math.floor(9.2) //9 , 9,6 ზეც 9 გამოიტანს
+// console.log(floor)
 
-const z = Math.round(5.4) //5 , მაგრამ რომ ეწეროს 5.5 დააბრუნებს 6-ს
-console.log(z)
+// const z = Math.round(5.4) //5 , მაგრამ რომ ეწეროს 5.5 დააბრუნებს 6-ს
+// console.log(z)
 
-const rnd = Math.random() //დააბრუნოს ნებისმიერი რიცხვი 1 მდე
-console.log(rnd)
+// const rnd = Math.random() //დააბრუნოს ნებისმიერი რიცხვი 1 მდე
+// console.log(rnd)
 
-function getRandomInt(max) {
-    return Math.floor(Math.random() * max);
-}
-console.log(getRandomInt(100)); //ამ დროს ნებმისერ რიცხვს მოგცემს 100 მდე და თან დამრგვალებულს
+// function getRandomInt(max) {
+//     return Math.floor(Math.random() * max);
+// }
+// console.log(getRandomInt(100)); //ამ დროს ნებმისერ რიცხვს მოგცემს 100 მდე და თან დამრგვალებულს
 
-const names = [
-    "apxo",
-    "giorgi",
-    "ana",
-    "tiko",
-    "tornike"
-]
-const mynames = names[Math.floor(Math.random() * names.lenth)] //რანდომულად ამოყრის სახელებს
-document.write(mynames)
+// const names = [
+//     "apxo",
+//     "giorgi",
+//     "ana",
+//     "tiko",
+//     "tornike"
+// ]
+// const mynames = names[Math.floor(Math.random() * names.lenth)] //რანდომულად ამოყრის სახელებს
+// document.write(mynames)
 
-const kvadrati = Math.pow(2,3) //8 , ახარისხებს 2 იმდენჯერ რამდენიც წერია მის გვერდით
+// const kvadrati = Math.pow(2,3) //8 , ახარისხებს 2 იმდენჯერ რამდენიც წერია მის გვერდით
 
-const square = Math.sqrt(9) //3 , კვადრატული ფესვი
+// const square = Math.sqrt(9) //3 , კვადრატული ფესვი
+
